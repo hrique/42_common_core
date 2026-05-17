@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 17:53:54 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/16 22:35:25 by hrique           ###   ########.fr       */
+/*   Created: 2026/05/16 22:35:30 by hrique            #+#    #+#             */
+/*   Updated: 2026/05/16 23:28:42 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+//#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putchar(char c);
+/*{
+	write (1, &c, 1);
+}*/
+
+int	main(int argc, char **argv)
 {
 	int	i;
+	int	c;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+	i = 1;
+	if (argc == 1)
+		return (1);
+	while (i < argc)
 	{
+		c = 0;
+		while (argv[i][c] != '\0')
+		{
+			ft_putchar(argv[i][c]);
+			c++;
+		}
+		ft_putchar('\n');
 		i++;
 	}
-	return (s1[i] - s2[i]);
-}
-
-/*int	main(void)
-{
-	char	word1[] = "teste";
-	char	word2[] = "tes";
-	int		i = 0;
-
-	i = ft_strcmp(word1, word2);
-	printf("%d", i);
 	return (0);
-}*/
+}
