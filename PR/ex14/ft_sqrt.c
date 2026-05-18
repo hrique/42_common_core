@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:16:47 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/15 16:27:49 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/05/18 17:49:57 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_sqrt(int nb)
 	int	num;
 	int	result;
 
-	num = 0;
+	num = 1;
 	if (nb <= 0)
 		return (0);
 	if (nb == 1)
 		return (1);
-	while (num <= nb)
+	while (num <= nb / num)
 	{
 		result = num * num;
 		if (result == nb)
@@ -32,11 +32,11 @@ int	ft_sqrt(int nb)
 	return (0);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	int	result;
 
 	result = ft_sqrt(16);
 	printf("%d", result);
 	return (0);
-}*/
+} */

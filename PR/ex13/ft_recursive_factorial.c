@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 18:44:47 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/15 16:00:44 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:07:29 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	ft_recursive_factorial(int nb)
 {
-	if (nb < 0)
+	if (nb < 0 || nb > 12)
 		return (0);
 	if (nb == 0)
 		return (1);
-	nb *= ft_recursive_factorial(nb -1);
-	return (nb);
+	return (nb *= ft_recursive_factorial(nb -1));
 }
 
 /*int	main(void)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 22:35:30 by hrique            #+#    #+#             */
-/*   Updated: 2026/05/18 18:07:50 by hesantan         ###   ########.fr       */
+/*   Created: 2026/05/18 13:50:18 by hesantan          #+#    #+#             */
+/*   Updated: 2026/05/18 18:13:14 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,41 @@ void	ft_print_params(int argc, char **argv)
 	return ;
 }
 
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
+}
+
+void	ft_sort_params(int argc, char **argv)
+{
+	int		i;
+	char	*temp;
+
+	i = 1;
+	while (i < argc - 1)
+	{
+		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+		{
+			temp = argv[i + 1];
+			argv[i + 1] = argv[i];
+			argv[i] = temp;
+			i = 1;
+		}
+		i++;
+	}
+	return ;
+}
+
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
 		return (0);
+	ft_sort_params(argc, argv);
 	ft_print_params(argc, argv);
 	return (0);
 }

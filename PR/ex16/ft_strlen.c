@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 17:07:57 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/15 18:53:10 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/05/18 13:45:32 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while (str++)
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
 /*int	main(void)
 {
-	char	word[] = "teste";
+	char	word[] = "testeaaa";
 	int		count;
 
 	count = ft_strlen(word);
