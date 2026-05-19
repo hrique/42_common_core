@@ -62,7 +62,8 @@ void	ft_sort_params(int argc, char **argv)
 			argv[i] = temp;
 			i = 1;
 		}
-		i++;
+		else
+			i++;
 	}
 	return ;
 }
