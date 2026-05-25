@@ -6,7 +6,7 @@
 /*   By: henriqueframeschi <henriqueframeschi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 20:40:37 by henriquefra       #+#    #+#             */
-/*   Updated: 2026/05/25 20:42:13 by henriquefra      ###   ########.fr       */
+/*   Updated: 2026/05/25 20:53:37 by henriquefra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void    bzero(void *s, size_t n)
 {
-    ft_memset(s, 0, n);
+	ft_memset(s, 0, n);
 }
