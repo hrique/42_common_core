@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: henriqueframeschi <henriqueframeschi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 17:07:57 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/18 13:45:32 by hesantan         ###   ########.fr       */
+/*   Created: 2026/05/25 19:59:52 by henriquefra       #+#    #+#             */
+/*   Updated: 2026/05/25 20:53:44 by henriquefra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+void    *memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char   *temp;
+	size_t i;
 
 	i = 0;
-	while (str[i] != '\0')
+	temp = (unsigned char *)s;
+	if (n == 0)
+		return (s);
+	while (i < n)
+	{
+		temp[i] = (unsigned char)c;
 		i++;
-	return (i);
+	}
+	return (s);
 }
-
-/*int	main(void)
-{
-	char	word[] = "testeaaa";
-	int		count;
-
-	count = ft_strlen(word);
-	printf("%d", count);
-	return (0);
-}*/

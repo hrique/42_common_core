@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: henriqueframeschi <henriqueframeschi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/15 17:07:57 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/18 13:45:32 by hesantan         ###   ########.fr       */
+/*   Created: 2026/05/25 20:40:37 by henriquefra       #+#    #+#             */
+/*   Updated: 2026/05/25 20:53:37 by henriquefra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+void    bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	ft_memset(s, 0, n);
 }
-
-/*int	main(void)
-{
-	char	word[] = "testeaaa";
-	int		count;
-
-	count = ft_strlen(word);
-	printf("%d", count);
-	return (0);
-}*/
