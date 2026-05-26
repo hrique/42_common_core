@@ -6,11 +6,24 @@
 /*   By: henriqueframeschi <henriqueframeschi@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 20:49:08 by henriquefra       #+#    #+#             */
-/*   Updated: 2026/05/25 20:53:30 by henriquefra      ###   ########.fr       */
+/*   Updated: 2026/05/25 21:08:26 by henriquefra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	unsigned char	*temp_dest;
+	unsigned char	*temp_src;
+	size_t	i;
 	
+	temp_dest = (unsigned char *)dest;
+	temp_src = (unsigned char *)src;
+	if (n == 0 || dest == NULL && src == NULL)
+		return (dest)
+	while (i < n)
+	{
+		temp_dest[i] = temp_src[i];
+		i++;
+	}
+	return (dest);
 }
