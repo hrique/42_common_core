@@ -6,7 +6,7 @@
 #    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/05/22 17:25:47 by hrique           ###   ########.fr        #
+#    Updated: 2026/05/25 23:42:55 by hrique           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 ## listar todos os arquivos .c separados por '\', menos no ultimo arquivo.
-SRCS = ft_funcoes.c
+SRCS = ft_bzero.c \
+	ft_memcpy.c \
+	ft_memset.c
 
 ## pegue tudo que esta em SRCS e mude de .c para .o
 OBJS = $(SRCS:.c=.o)
@@ -41,7 +43,7 @@ clean:
 	rm -f $(OBJS)
 ## remove sem pedir confirmação os arquivos .o
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 ## remove os objs(.o) e o arquivo .a gerado
 
