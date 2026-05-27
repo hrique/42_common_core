@@ -6,7 +6,7 @@
 #    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/05/25 23:42:55 by hrique           ###   ########.fr        #
+#    Updated: 2026/05/26 19:42:21 by hrique           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,16 @@ NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror
 
 ## listar todos os arquivos .c separados por '\', menos no ultimo arquivo.
-SRCS = ft_bzero.c \
+SRCS = ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_strlen.c \
+	ft_memset.c \
+	ft_bzero.c \
 	ft_memcpy.c \
-	ft_memset.c
+	ft_memmove.c
 
 ## pegue tudo que esta em SRCS e mude de .c para .o
 OBJS = $(SRCS:.c=.o)
@@ -34,8 +41,9 @@ $(NAME): $(OBJS)
 ## rcs = replace old files, create if no exist, sort.
 
 ## para qualquer arquivo .o procure por um arquivo .c com mesmo nome.
-%.o: %.c 
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
+## adicionado o libft.h como dependencia, caso atualizado o make vai recompilar
 ## $< representa o comando mais a esquerda %.c
 ## $@ representa o nome do alvo (arquivo .o)
 
@@ -47,7 +55,9 @@ fclean: clean
 	rm -f $(NAME)
 ## remove os objs(.o) e o arquivo .a gerado
 
-re: fclean all
+re:
+	$(MAKE) fclean
+	$(MAKE) all
 ## rebuild(recompilar), limpa tudo e compila novamente
 
 .PHONY: all clean fclean re
