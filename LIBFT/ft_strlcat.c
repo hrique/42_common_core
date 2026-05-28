@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 20:40:37 by henriquefra       #+#    #+#             */
-/*   Updated: 2026/05/27 11:55:34 by hesantan         ###   ########.fr       */
+/*   Created: 2026/05/27 15:11:35 by hesantan          #+#    #+#             */
+/*   Updated: 2026/05/28 15:56:49 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	ft_memset(s, 0, n);
+	size_t	i;
+	size_t	ct_dst;
+	size_t	ct_src;
+
+	ct_dst = ft_strlen(dst);
+	ct_src = ft_strlen(src);
+	if (size <= ct_dst)
+		return (size + ct_src);
+	i = 0;
+	while ((ct_dst + i < size -1) && (src[i] != '\0'))
+	{
+		dst[ct_dst + i] = src[i];
+		i++;
+	}
+	dst[ct_dst + i] = '\0';
+	return (ct_dst + ct_src);
 }
