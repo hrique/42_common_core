@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 16:37:15 by hesantan          #+#    #+#             */
-/*   Updated: 2026/05/29 15:22:33 by hrique           ###   ########.fr       */
+/*   Created: 2026/05/29 18:00:19 by hrique            #+#    #+#             */
+/*   Updated: 2026/05/29 18:21:41 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
-	char	*pt;
+	size_t			i;
+	unsigned char	*pt_s;
+	unsigned char	x;
 
 	i = 0;
-	pt = (char *)s;
-	while (pt[i] != '\0')
+	pt_s = (unsigned char *)s;
+	x = (unsigned char)c;
+	if (n == 0)
+		return (NULL);
+	while (i < n)
 	{
-		if (pt[i] == (char)c)
-			return (&pt[i]);
+		if (pt_s[i] == x)
+			return (&pt_s[i]);
 		i++;
 	}
-	if (pt[i] == (char)c)
-		return (&pt[i]);
+	if (pt_s[i] == x)
+		return (&pt_s[i]);
 	return (NULL);
 }
