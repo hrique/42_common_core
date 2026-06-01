@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
+#    By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/05/29 18:42:02 by hrique           ###   ########.fr        #
+#    Updated: 2026/06/01 14:43:25 by hesantan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRCS = ft_isalpha.c \
 	ft_strrchr.c \
 	ft_strncmp.c \
 	ft_memchr.c \
-	ft_memcmp.c
+	ft_memcmp.c \
+	ft_strnstr.c \
+	ft_atoi.c
 
 ## pegue tudo que esta em SRCS e mude de .c para .o
 OBJS = $(SRCS:.c=.o)

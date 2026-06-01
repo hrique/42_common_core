@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/29 20:55:38 by hrique            #+#    #+#             */
-/*   Updated: 2026/06/01 14:08:42 by hesantan         ###   ########.fr       */
+/*   Created: 2026/06/01 14:54:51 by hesantan          #+#    #+#             */
+/*   Updated: 2026/06/01 17:02:39 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
+	void	*ptr;
+	size_t	max;
 	size_t	i;
-	size_t	j;
-	char	*t_big;
-	char	*t_little;
 
 	i = 0;
-	t_big = (char *)big;
-	t_little = (char *)little;
-	if (ft_strlen(little) == 0)
-		return (t_big);
-	while (t_big[i] != '\0' && i < len)
+	max = (size_t)-1;
+	if (nmemb > 0 && size > (max / nmemb))
+		return (NULL);
+	ptr = malloc(size * nmemb);
+	while (i < nmemb)
 	{
-		j = 0;
-		while (t_little[j] != '\0' && \
-			t_big[i + j] == t_little[j] && ((i + j) < len))
-			j++;
-		if (t_little[j] == '\0')
-			return (&t_big[i]);
-		i++;
+		ft_bzero
 	}
-	return (NULL);
 }
