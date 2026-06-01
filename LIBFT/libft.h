@@ -6,7 +6,7 @@
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 15:43:00 by hrique            #+#    #+#             */
-/*   Updated: 2026/06/01 14:57:21 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/06/01 19:21:38 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 /* encerra o bloco condicional */
 #endif

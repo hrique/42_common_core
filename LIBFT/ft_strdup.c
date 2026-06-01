@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/01 14:54:51 by hesantan          #+#    #+#             */
-/*   Updated: 2026/06/01 19:20:56 by hesantan         ###   ########.fr       */
+/*   Created: 2026/06/01 19:23:15 by hesantan          #+#    #+#             */
+/*   Updated: 2026/06/01 19:24:10 by hesantan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*strdup(const char *s)
 {
-	void	*ptr;
-	size_t	max;
-	size_t	i;
-
-	i = 0;
-	max = (size_t)-1;
-	if (nmemb > 0 && size > (max / nmemb))
-		return (NULL);
-	ptr = malloc(size * nmemb);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	...
 }
