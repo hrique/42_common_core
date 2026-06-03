@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+         #
+#    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/06/01 19:21:48 by hesantan         ###   ########.fr        #
+#    Updated: 2026/06/02 22:57:07 by hrique           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,10 @@ SRCS = ft_isalpha.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
 	ft_atoi.c \
-	ft_calloc.c
+	ft_calloc.c \
+	ft_strdup.c \
+	ft_substr.c \
+	ft_strjoin.c
 
 ## pegue tudo que esta em SRCS e mude de .c para .o
 OBJS = $(SRCS:.c=.o)
@@ -73,5 +76,5 @@ re:
 ## rebuild(recompilar), limpa tudo e compila novamente
 
 .PHONY: all clean fclean re
-## indica ao make que o all, clean, fclean e re são comando e não arquivos.
+## indica ao make que o all, clean, fclean e re são comandos e não arquivos.
 ## serve para caso você tenha um arquivo clean.c e que ele possa ser compilado

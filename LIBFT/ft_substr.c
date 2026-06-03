@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/01 14:54:51 by hesantan          #+#    #+#             */
-/*   Updated: 2026/06/02 15:58:39 by hrique           ###   ########.fr       */
+/*   Created: 2026/06/02 17:55:46 by hrique            #+#    #+#             */
+/*   Updated: 2026/06/02 18:45:05 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*ptr;
-	size_t	max;
+	char	*ptr;
+	size_t	size;
 
-	max = (size_t)-1;
-	if (nmemb > 0 && size > (max / nmemb))
-		return (NULL);
-	ptr = malloc(size * nmemb);
+	size = ft_strlen(s);
+	if (size <= start)
+		return (ft_strdup(""));
+	if ((size - start) < len)
+		len = size - start;
+	ptr = malloc((len + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, nmemb * size);
+	ft_strlcpy(ptr, &s[start], len + 1);
 	return (ptr);
 }
