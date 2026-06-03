@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
+#    By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/06/02 22:57:07 by hrique           ###   ########.fr        #
+#    Updated: 2026/06/03 14:30:35 by hesantan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,8 @@ SRCS = ft_isalpha.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c \
-	ft_strjoin.c
+	ft_strjoin.c \
+	ft_strtrim.c
 
 ## pegue tudo que esta em SRCS e mude de .c para .o
 OBJS = $(SRCS:.c=.o)
