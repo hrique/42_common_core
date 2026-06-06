@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 14:58:06 by hesantan          #+#    #+#             */
-/*   Updated: 2026/06/05 17:59:48 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/06/05 21:02:45 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static size_t	ct_size(char const *s, char c, size_t start)
 	return (size);
 }
 
-static char	*free_list(char *list, size_t index)
+static char	*free_list(char list, size_t index)
 {
 	while (index > 0)
 	{
@@ -61,13 +61,29 @@ static char	*free_list(char *list, size_t index)
 	return (list);
 }
 
+static char	*copy_letters(char const *s, size_t index, size_t size)
+{
+	size_t	i;
+	char	*str;
+
+	i = 0;
+	str = (char *)s;
+	str = malloc((size + 1) * sizeof(char));
+	while (i < size)
+	{
+		str[i] = s[index + i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	words;
 	size_t	size;
 	size_t	i;
 	size_t	j;
-	size_t	start;
 	char	**list;
 
 	words = ct_words(s, c);
@@ -78,28 +94,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	while (i < words)
 	{
-		start = 0;
-		if (s[j] == c)
-		{
-			while (s[j] == c)
-				j++;
-		}	
+		while (s[j] == c)
+			j++;
 		size = ct_size(s, c, j);
-		list[i] = malloc((size + 1) * sizeof(char));
+		list[i] = copy_letters(s, j, size);
 		if (list[i] == NULL)
 			free_list(list, i);
-		start = 0;
-		while (start < size)
-		{
-			list[i][start] = s[j];
-			j++;
-			start++;
-		}
-		list[i][start] = '\0';
 		i++;
 		j = size + j;
 	}
-}
 	list[i] = NULL;
 	return (list);
 }
