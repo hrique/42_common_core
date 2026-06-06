@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 15:43:00 by hrique            #+#    #+#             */
-/*   Updated: 2026/06/03 14:30:25 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/06/06 18:40:44 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/*bibliotecas inclusas, sempre dar espaço após o #*/
-/*<stddef.h> inclui size_t e NULL*/
-/*<stdlib.h> inclui malloc e free*/
 # include <stddef.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -45,5 +43,12 @@ char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
