@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 14:58:06 by hesantan          #+#    #+#             */
-/*   Updated: 2026/06/05 21:02:45 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/08 14:41:53 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static size_t	ct_size(char const *s, char c, size_t start)
 	return (size);
 }
 
-static char	*free_list(char list, size_t index)
+static char	**free_list(char **list, size_t index)
 {
 	while (index > 0)
 	{
@@ -58,7 +58,7 @@ static char	*free_list(char list, size_t index)
 		free(list[index]);
 	}
 	free(list);
-	return (list);
+	return (NULL);
 }
 
 static char	*copy_letters(char const *s, size_t index, size_t size)
@@ -99,7 +99,7 @@ char	**ft_split(char const *s, char c)
 		size = ct_size(s, c, j);
 		list[i] = copy_letters(s, j, size);
 		if (list[i] == NULL)
-			free_list(list, i);
+			return (free_list(list, i));
 		i++;
 		j = size + j;
 	}

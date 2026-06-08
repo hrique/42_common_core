@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/07 22:18:09 by hrique            #+#    #+#             */
-/*   Updated: 2026/06/07 22:35:49 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/08 14:28:01 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	last = ft_lstlast(lst);
+	last = ft_lstlast(*lst);
 	last->next = new;
 }

@@ -6,7 +6,7 @@
 #    By: hrique <hrique@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/22 16:38:00 by hrique            #+#    #+#              #
-#    Updated: 2026/06/08 14:25:16 by hrique           ###   ########.fr        #
+#    Updated: 2026/06/08 14:32:49 by hrique           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS = ft_isalpha.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
+	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \

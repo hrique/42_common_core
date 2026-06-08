@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 11:54:54 by hrique            #+#    #+#             */
-/*   Updated: 2026/06/08 14:22:06 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/08 14:26:39 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list 	*new_list;
-	t_list 	*new_node;
+	t_list	*new_list;
+	t_list	*new_node;
 	void	*new_content;
 
 	new_list = NULL;
