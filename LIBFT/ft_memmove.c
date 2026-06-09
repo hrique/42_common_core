@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 18:54:31 by hrique            #+#    #+#             */
-/*   Updated: 2026/05/26 19:41:40 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/09 14:53:39 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	temp_dest = (unsigned char *)dest;
 	temp_src = (unsigned char *)src;
-	if (n == 0 || (dest == NULL && src == NULL))
+	if (dest == NULL && src == NULL)
 		return (dest);
 	if (temp_dest > temp_src)
 	{

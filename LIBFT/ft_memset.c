@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 19:59:52 by henriquefra       #+#    #+#             */
-/*   Updated: 2026/05/26 17:25:20 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/09 13:48:43 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	temp = (unsigned char *)s;
-	if (n == 0)
-		return (s);
 	while (i < n)
 	{
 		temp[i] = (unsigned char)c;
