@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 15:31:16 by hrique            #+#    #+#             */
-/*   Updated: 2026/05/29 15:44:35 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/09 18:14:06 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (&pt[i]);
 		i--;
 	}
-	if (pt[i] == (char)c)
-		return (&pt[i]);
+	if (pt[0] == (char)c)
+		return (&pt[0]);
 	return (NULL);
 }
