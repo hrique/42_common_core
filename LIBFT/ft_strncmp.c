@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 16:10:46 by hrique            #+#    #+#             */
-/*   Updated: 2026/05/29 17:45:28 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/09 19:34:46 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (0);
 	while (i < n)
 	{
-		if ((pt_s1[i] != pt_s2[i]) || (pt_s1[i] == '\0') || (pt_s2[i] == '\0'))
+		if ((pt_s1[i] != pt_s2[i]) || (pt_s1[i] == '\0'))
 			return (pt_s1[i] - pt_s2[i]);
 		i++;
 	}
