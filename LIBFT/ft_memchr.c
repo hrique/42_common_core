@@ -6,7 +6,7 @@
 /*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/29 18:00:19 by hrique            #+#    #+#             */
-/*   Updated: 2026/05/29 18:21:41 by hrique           ###   ########.fr       */
+/*   Updated: 2026/06/09 10:26:37 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (&pt_s[i]);
 		i++;
 	}
-	if (pt_s[i] == x)
-		return (&pt_s[i]);
 	return (NULL);
 }
