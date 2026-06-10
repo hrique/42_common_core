@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hesantan <hesantan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hrique <hrique@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 14:21:54 by hesantan          #+#    #+#             */
-/*   Updated: 2026/06/01 14:49:55 by hesantan         ###   ########.fr       */
+/*   Updated: 2026/06/10 11:05:11 by hrique           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,26 @@
 
 int	ft_atoi(const char *nptr)
 {
-	char	*x;
-	int		num;
+	long	num;
 	int		i;
 	int		neg;
 
 	i = 0;
 	num = 0;
 	neg = 1;
-	x = (char *)nptr;
-	while (x[i] == ' ' || (x[i] >= 9 && x[i] <= 13))
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (x[i] == '+' || x[i] == '-')
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (x[i] == '-')
-			neg *= -1;
+		if (nptr[i] == '-')
+			neg = -1;
 		i++;
 	}
-	while (ft_isdigit(x[i]))
+	while (ft_isdigit(nptr[i]))
 	{
-		num = (num * 10) + (x[i] - '0');
+		num = (num * 10) + (nptr[i] - '0');
 		i++;
 	}
 	num = num * neg;
-	return (num);
+	return ((int)num);
 }
